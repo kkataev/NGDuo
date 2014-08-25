@@ -1,0 +1,31 @@
+{
+  "name": "NGDuo",
+  "description": "Project template for AngularJS and DuoJS",
+  "author": "Kirill Kataev <kirilkataev@gmail.com>",
+  "license": "MIT",
+  "main": "gulpfile.coffee",
+  "scripts": {
+    "start": "gulp"
+  },
+  "keywords": [
+    "gulp",
+    "angularjs",
+    "duojs"
+  ],
+  "version": "0.0.1",
+  "dependencies": {
+    "gulp": "3.8.7",
+    "gulp-coffee": "1.2.5",
+    "gulp-util": "3.0.0",
+    "gulp-connect": "2.0.6",
+    "gulp-clean": "0.3.1",
+    "duo": "0.8.1",
+    "map-stream": "0.1.0"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "devDependencies": {
+  }
+}

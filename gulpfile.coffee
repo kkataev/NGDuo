@@ -5,28 +5,29 @@ gulp       = require 'gulp'
 gutil      = require 'gulp-util'
 coffee     = require 'gulp-coffee'
 connect    = require 'gulp-connect'
-clean      = require 'gulp-clean'
+rimraf     = require 'gulp-rimraf'
+
 
 gulp.task "build", ["clean", "coffee", "styles", "index"]
 gulp.task "default", ["build", "connect"]
 
 gulp.task "clean", ->
-  gulp.src("public", {read: false}).pipe(clean({force: true}))
+  rimraf "./public"
 
 gulp.task "coffee", ->
-  gulp.src("scripts.coffee").pipe(coffee(bare: true).on("error", gutil.log)).pipe(gulp.dest("public")).pipe(duo()).pipe gulp.dest("public")
+  gulp.src("src/scripts/scripts.coffee").pipe(coffee(bare: true).on("error", gutil.log)).pipe(gulp.dest("public")).pipe(duo()).pipe gulp.dest("public")
   return
 
 gulp.task "styles", ->
-  gulp.src("styles.css").pipe(duo()).pipe gulp.dest("public")
+  gulp.src("src/styles/styles.css").pipe(duo()).pipe gulp.dest("public")
   return
 
 gulp.task "index", ->
-  gulp.src("index.html").pipe gulp.dest("public")
+  gulp.src("src/index.html").pipe gulp.dest("public")
   return
 
 gulp.task "connect", ->
-  connect.server(    
+  connect.server(
     root: "public",
     port: 8000,
   )

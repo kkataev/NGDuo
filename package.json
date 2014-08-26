@@ -18,7 +18,7 @@
     "gulp-coffee": "1.2.5",
     "gulp-util": "3.0.0",
     "gulp-connect": "2.0.6",
-    "gulp-clean": "0.3.1",
+    "gulp-rimraf": "0.1.0",
     "duo": "0.8.1",
     "map-stream": "0.1.0"
   },
